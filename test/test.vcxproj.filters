@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="base">
+      <UniqueIdentifier>{64475137-4757-44c0-9430-018b543ed12c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base\wsocket">
+      <UniqueIdentifier>{f99a2459-05db-44c5-a7fc-0fa8ae819f0a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="base\wsocket\gtest_wsocket.cc">
+      <Filter>base\wsocket</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="base\wsocket\gtest_wsocket.h">
+      <Filter>base\wsocket</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
