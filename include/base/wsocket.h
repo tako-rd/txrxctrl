@@ -21,6 +21,8 @@
 #include "common/result.h"
 
 #if defined(_MSC_VER)
+#pragma comment(lib,"Ws2_32.lib")
+
 # define LIB_MAJOR_VER    2
 # define LIB_MINOR_VER    2
 #elif defined(__GNUC__)
@@ -54,7 +56,7 @@ class wsocket {
                        dst_socket_(-1),
                        src_socket_(-1),
                        socket_type_(NOT_SET),
-                       connection_type_(SOCK_STREAM) {};
+                       connection_type_(0) {};
 
   wsocket(const wsocket& other) noexcept;
 
@@ -64,7 +66,7 @@ class wsocket {
 
   int32_t initialize(int8_t* const dst_addr, const uint16_t dst_port, 
                      int8_t* const src_addr, const uint16_t src_port,
-                     socket_type_t type);
+                     const socket_type_t type, const int32_t connection_type);
 
   int32_t transmit(int8_t* const data, const int32_t data_length);
 

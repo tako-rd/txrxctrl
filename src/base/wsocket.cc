@@ -42,7 +42,7 @@ wsocket::~wsocket() {
 
 int32_t wsocket::initialize(int8_t* const dst_addr, const uint16_t dst_port, 
                             int8_t* const src_addr, const uint16_t src_port,
-                            socket_type_t type) {
+                            const socket_type_t type, const int32_t connection_type) {
   int32_t status = 0;
   int32_t r_cd = SOCKET_SUCCESS;
   int32_t is_bind_src = 0;
@@ -51,7 +51,7 @@ int32_t wsocket::initialize(int8_t* const dst_addr, const uint16_t dst_port,
   dst_socket_ = INVALID_SOCKET;
   src_socket_ = INVALID_SOCKET;
   accept_socket_ = INVALID_SOCKET;
-  connection_type_ = SOCK_STREAM;
+  connection_type_ = connection_type;
 
   if (NULL != dst_addr) {
     /* Setting the destination address. */
